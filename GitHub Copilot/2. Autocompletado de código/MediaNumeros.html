@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hacer la media de numeros importados de un txt separados por coma</title>
+
+</head>
+<body>
+    <h1>Hacer la media de numeros importados de un txt separados por coma</h1>
+    <input type="file" id="fileInput" />
+    <p id="resultado"></p>
+    <script>
+        function leerArchivo(e) {
+            var archivo = e.target.files[0];
+            if (!archivo) {
+                return;
+            }
+            var lector = new FileReader();
+            lector.onload = function(e) {
+                var contenido = e.target.result;
+                var numeros = contenido.split(",");
+                var suma = 0;
+                for (var i = 0; i < numeros.length; i++) {
+                    suma += parseInt(numeros[i]);
+                }
+                var media = suma / numeros.length;
+                document.getElementById("resultado").innerHTML = "La media es: " + media;
+            };
+            lector.readAsText(archivo);
+        }
+        document.getElementById('fileInput').addEventListener('change', leerArchivo, false);
+    </script>
+</body>
+</html>

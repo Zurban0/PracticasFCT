@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button onclick="sacarNumerosNoRepetidos()">Sacar números</button>
+    <script>
+        function sacarNumerosNoRepetidos() {
+            const arr = [1, 3, 1, 5, 2, 4, 1, 3, 4, 3, 23]
+            const resultado = arr.reduce((prev, cur) => ((prev[cur] = prev[cur] + 1 || 1), prev), {});
+            for (var i = 0; i < arr.length; i++) {
+                if (resultado[arr[i]] == 1) {
+                    document.writeln(arr[i]);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

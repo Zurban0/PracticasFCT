@@ -1,0 +1,85 @@
+html{
+    overflow: hidden;
+}
+
+.pantalla-principal {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mapa {
+    width: 800px;
+    height: 90%;
+    position: relative;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mapa-oculta{
+display: none;
+}
+
+.jugador {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/muniecoSaltandoDerecha.png");
+    background-size: cover;
+    position: absolute;
+}
+
+.puntuaciones {
+    width: 800px;
+    height: 5%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    padding: 0 10px;
+}
+
+.puntuacion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.puntuacion span{
+    margin-left: 10px;
+}
+
+.boton-reiniciar {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    width: 800px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    text-align: center;
+}
+
+.boton-reiniciar a{
+    text-decoration: none;
+    color: white;
+    
+}

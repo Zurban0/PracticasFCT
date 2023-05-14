@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="file" id="file-input" />
+    <h3>Media de números:</h3>
+    <pre id="contenido-archivo"></pre>
+    <script>
+        function leerArchivo(e) {
+            var archivo = e.target.files[0];
+            if (!archivo) {
+                return;
+            }
+            var lector = new FileReader();
+            lector.onload = function (e) {
+                var contenido = e.target.result;
+                mostrarContenido(contenido);
+            };
+            lector.readAsText(archivo);
+        }
+
+        function mostrarContenido(contenido) {
+            var elemento = document.getElementById('contenido-archivo');    
+            elemento.innerHTML = media(contenido);
+        }
+
+        function media(contenido) {
+            var suma = 0;
+            var numeros = "";
+            var values = "";
+            for (var i = 0; i <= contenido.length; i++) {
+                if (contenido[i] === ',') {
+                    suma += numeros * 1
+                    numeros = "";
+                } else {
+                    numeros += contenido[i];
+                    values += contenido[i];
+                }
+            }
+            alert(suma);
+            return suma / values.length;
+        }
+
+        document.getElementById('file-input').addEventListener('change', leerArchivo, false);
+    </script>
+</body>
+</html>
